@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id=header>
+        <h1>NASCITE IN ITALIA CONFRONTATE AL CONGO</h1>
+        </div>
+        <h2>OBBIETTIVO DENUNCIA:
+        Quanti bambini nascono in Italia e quanti nascono in Congo.
+        </h2>
+        <p>Nascite in Italia al secondo(0,012) (un bambino ogni 83 secondi)</p>
+        
+        <div id="barraprima">
+            <div id="myProgress">
+                <div id="myBar"></div>
+              </div>
+        </div>
+        <p id="cont">0</p>
+
+           <p>Nascite in congo al secondo(0,10) (un bambino ogni 10 secondi)</p>
+           <div id="barraprima">
+           <div id="myProgress2">
+            <div id="myBar2"></div> 
+        </div>
+          </div>
+           <p id="cont2" >0</p>
+        <br>
+        <h3>ITALIA:</h3>
+       <p>Quando nasce un figlio bisogna attrezzarsi. E non solo psicologicamente. Appena nato il bebè chiede bavaglini, pannolini, tutine, culla, passeggino, marsupio e seggiolone e così via, per un totale di spesa annua che oscilla da un minimo di 7.123,01 euro ad un massimo di 15.348,93 euro
+        I genitori  risparmiano come possono: comprano online, si fanno aiutare dai nonni e riciclano l’usato, ben consci che là dove riescono a risparmiare recupereranno un po’ delle spese mediche</p> 
+        <h3>FIGLI PER DONNA:</h3>
+        <img src="italia2.jpg" style="width:500px;height:500px;">
+         <h3>CONGO:</h3>
+         <p class="p1">le nascite in Congo sono quasi 8 volte superiori a quelle Italiana nonostante le condizioni economiche e sanitarie del paese siano peggiori dell'Italia e quasi critiche.  </p> 
+         <img src="congo2.jpg" style="width:500px;height:500px;">
+</body>
+<script>
+    var c=0;
+    var c2=0;
+
+    function move() {
+        var elem = document.getElementById("myBar");   
+        var width = 0;
+        var id = setInterval(frame,1000) ;    
+        function frame() {
+            document.getElementById("cont").innerHTML=c;
+            c=c+0.012;
+            document.getElementById("cont"); 
+            parseFloat(c).toFixed(2);
+
+            if (width == 100) 
+            {
+                clearInterval(id);
+            } else 
+            {
+                width=width+0.012; 
+                elem.style.width = width + '%'; 
+            }
+        }
+
+        function startCountdown(seconds) {
+            let counter = 0.0001200;
+        
+            const interval = setInterval(() => 
+            {
+            console.log(counter);
+            counter--;
+          
+            if (counter < 0 )   
+            {
+            clearInterval(interval);
+            console.log('Ding!');
+            }
+            }, 1000);
+        }
+    
+    }
+
+    function move2() {
+        var elem2 = document.getElementById("myBar2");   
+        var width2 = 0;
+        var id2 = setInterval(frame2,1000) ;
+        function frame2() {    
+            document.getElementById("cont2").innerHTML=c2;
+            c2=c2+0.10;
+            document.getElementById("cont2"); 
+        
+            if (width2 == 100) 
+            {
+            clearInterval(id2);
+            }   
+            else 
+                {
+                width2=width2+0.10; 
+                elem2.style.width = width2 + '%'; 
+                }
+            }
+        } 
+
+
+    function startCountdown2(seconds) {
+        let counter2 = 0.001035;
+        
+        const interval = setInterval(() => {
+            counter2--;
+            console.log(counter2);
+          
+            if (counter2 < 0 ) 
+            {
+            clearInterval(interval);
+            console.log('Ding!');
+            }
+
+        }, 1000);
+    }
+
+    window.onload=move();
+    window.onload=move2();
+    </script>
+</html>
