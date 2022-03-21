@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generatore di frasi 1.0</title>
+
+<link rel="stylesheet" href="./css/Rform.css">
+
+<link rel="stylesheet" href="./css/MioCss.css">
+
+<script type="text/javascript" src="sentence_engine.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<form class="form-inline" onsubmit="return false">
+
+<p>Generatore di frasi ver 0.1</p>
+
+<p>Puoi caricare nuove parole come soggetto verbo complemento e aggettivi e il motore continuerà a produrre
+
+una frase ogni secondo combinando le parole senza pesi Nella versione 0.2 sono introdotti pesi associativi per
+
+combinare parole con un senso minimamente compiuto dipendentemente dai parametri del Sentence-engine.
+
+</p>
+
+<label for="lblsubject">Soggetto</label>
+
+<input id="subject" type="text" >
+
+<div style="margin:2px">
+
+<button onclick="AddWord('soggetto')">Aggiungi Soggetto</button>
+
+<p id ='outsoggetto'>....</p>
+
+</div>
+
+<label for="lblsubject">Verbo</label>
+
+<input id="verb" type="text" >
+
+<div style="margin:2px">
+
+<button onclick="AddWord('verbo')">Aggiungi Verbo</button>
+
+<p id ='outverbo'>....</p>
+
+</div>
+
+<label for="lblco">Complemento oggetto</label>
+
+<input id="co" type="text" >
+
+<div style="margin:2px">
+
+<button onclick="AddWord('co')">Aggiungi Complemento Oggetto/luogo</button>
+
+<p id ='outco'>....</p>
+
+</div>
+
+<label for="lbladjective">Aggettivo</label>
+
+<input id="adjective" type="text" >
+
+<div style="margin:2px">
+
+<button onclick="AddWord('aggettivo')">Aggiungi aggettivo</button>
+
+<p id ='outa'>....</p>
+
+</div>
+
+<!--- <input type="submit" value="Add subject">-->
+
+</div>
+
+</form>
+
+<button id="button1" onclick="generatore(1,subject,verb,co,adjective)">Generatore random</button>
+
+<p id="output">.....</p>
+
+<script>
+
+let subject =[];
+
+let verb=[];
+
+let co=[];
+
+let adjective=[];
+
+function AddWord(parola) {
+
+let subjectItem="";
+
+if (parola=='soggetto')
+
+{
+
+subjectItem = document.getElementById('subject').value;
+
+if (subjectItem.length>=1)
+
+{ subject.push(subjectItem);
+
+document.getElementById('outsoggetto').innerText=subject;
+
+document.getElementById('subject').value="";
+
+}
+
+}
+
+if (parola=='verbo')
+
+{
+
+subjectItem = document.getElementById('verb').value;
+
+if (subjectItem.length>=1)
+
+{ verb.push(subjectItem);
+
+document.getElementById('outverbo').innerText=verb;
+
+document.getElementById('verb').value="";
+
+}
+
+}
+
+if (parola=='co')
+
+{
+
+subjectItem = document.getElementById('co').value;
+
+if (subjectItem.length>=1)
+
+{ co.push(subjectItem);
+
+document.getElementById('outco').innerText=co;
+
+document.getElementById('co').value="";
+
+}
+
+}
+
+if (parola=='aggettivo')
+
+{
+
+subjectItem = document.getElementById('adjective').value;
+
+if (subjectItem.length>=1)
+
+{ adjective.push(subjectItem);
+
+document.getElementById('outa').innerText=adjective;
+
+document.getElementById('adjective').value="";
+
+}
+
+}
+
+}
+
+Sentence engine.js
+
+function generatore(par,s,v,c,a)
+
+{
+
+switch (par)
+
+{
+
+case 1:
+
+
+let str ;
+
+ alert(str);
+
+setInterval(str=ArrayRandomCombination(s,v,c,a), 1000);
+
+document.write('<p>'+str+' </p>');
+
+document.getElementById('output').innerHTML=str;
+
+ break;
+
+case 2:
+
+}
+
+}
+
+
+function ArrayRandomCombination(s,v,c,a)
+
+{let sentence='';
+
+let spazio=" ";
+
+let lenS=s.length;
+
+let lenV=v.length;
+
+let lenC=c.length;
+
+let lenA=a.length;
+
+let is=Math.floor(Math.random() * lenS-1);
+
+let iv=Math.floor(Math.random() * lenV-1);
+
+let ic=Math.floor(Math.random() * lenC-1);
+
+let ia=Math.floor(Math.random() * lenA-1);
+
+sentence=s[is]+ spazio+ v[iv]+spazio+c[ic];
+
+return sentence;
+
+}
+</script>
+
+</body>
+
+</html>
