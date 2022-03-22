@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let items = [];
+
+    function inputToArray() {
+        let str="";
+        let boxvalue="";
+      boxvalue = document.getElementById('box').value;
+      items.push(boxvalue);
+     console.log(items);
+      str=str+","+boxvalue;
+      document.getElementById('out').innerHTML=items;
+      return false;
+      }
+
+function printArray(){
+   let str=""; 
+for(let i=0;i<items.length;i++)
+{
+str=str+" "+items[i].value;
+
+}
+return str;
+
+}
+
+</script>
+<h2>TEST GIOCHI SUL TEMPO |Simone Bellone|</h2>
+
+<p id="demo">Questa pagina conta quanto tempo ci metti  a premere il bottone</p>
+<p id="out">0.0</p>
+<button type="button" onclick='count();array();'>Invia</button>
+
+<script>
+let i = 0;
+let start = Date.now();
+function count() {
+
+  document.getElementById("out").innerHTML="Done in " + (Date.now() - start) + " ms"; 
+}
+ 
+</script>
+ <form onsubmit="">
+        <p>Please insert the items</p>
+        <input type="text" id="box">
+        <input type="submit" value="Submit">
+      
+    
+    </form>
+  
+
+  <button onclick="inputToArray()">Inserisci soggetto</button>
+      <p id="out"></p>
+</body>
+</html>
+
