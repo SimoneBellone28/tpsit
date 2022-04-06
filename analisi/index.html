@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellone</title>
+</head>
+<body>
+    <h1> Creare un programma javascript che stampa i numeri da 1 a 1000
+        e colora i multipli di 10  di rosso </h1>
+<button id="miobottone" onclick="contailtempo()" >clicca per i 1000 numeri</button>
+<p id="output">...</p>
+<p id="outputArray">i numeri:</p>
+<script>
+    let datainizio=Date.now();
+    let arraytempi=[];
+
+    
+
+function contailtempo() {
+    for(i=0;i<1001;i++){
+       
+        
+        if(i%10==0){
+            document.write("<span style='color:red;'>"+" "+i+"</span>"); 
+        }
+       else 
+       document.write(" "+i);
+        
+    }
+
+
+    let tempo=Date.now()-datainizio;
+    document.getElementById("output").innerHTML=tempo+ "ms";
+   
+    inputToArray(tempo);
+   
+   
+}
+
+function inputToArray(a) {
+arraytempi.push(a);
+console.log();
+document.getElementById('outputArray').innerHTML=stampaArray(arraytempi);    
+}
+function stampaArray(v) {
+let str="";
+    for(let i=0;i<v.length;i++)
+    {
+    str=str+ " " + v[i];
+    }
+return str;
+
+}
+
+</script>
+
+</body>
+</html>
+
