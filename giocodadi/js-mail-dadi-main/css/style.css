@@ -55,8 +55,8 @@ span {
 }
 
 .dado {
-  height: 150px;
-  width: 150px;
+  height: 20%;
+  width: 20%;
   margin: auto;
   background-image: url(https://m.uplay.it/www.uplay.it_Dado_Bianco__25_mm_--400x400.png);
   background-size: cover;
