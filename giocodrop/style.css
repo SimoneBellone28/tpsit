@@ -1,0 +1,97 @@
+body {
+  margin: 30px;
+  color: rgb(0, 0, 0);
+}
+
+#content {
+  margin: 80px 70px;
+  text-align: center;
+}
+
+.wideBox {
+  text-align: center;
+  margin: 70px;
+  padding: 0px;
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+}
+
+#cardSlots {
+  margin: 50px auto 0 auto;
+  background: rgb(255, 0, 0);
+}
+
+#cardPile {
+  margin: 0 auto;
+  background: rgb(0, 255, 232);
+}
+
+#cardSlots, #cardPile {
+  width: 910px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#cardSlots div, #cardPile div {
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid rgb(255, 0, 0);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: rgb(255, 0, 0);
+}
+
+#cardPile div {
+  background: rgb(0, 0, 0);
+  color: #fff;
+  font-size: 50px;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 0, 0);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}
